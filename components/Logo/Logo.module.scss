@@ -1,0 +1,31 @@
+@import 'styles/sass'; 
+
+.logo{
+    .logoTitle{
+        font-size: 32px;
+        border-bottom: 4px $main-blue solid;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: color .5s linear;
+        position:relative;
+        color:#c9c9c9;
+        &:hover{
+            color: white;
+            border-radius: 10px;
+            transition: color .5s linear, border-radius 10px .5s linear;
+        }
+        &:before{
+            content:"StackOverflowList";
+            position:absolute;
+            color: $main-blue;
+            top:0;
+            left:0;
+            width:0%;
+            overflow:hidden;
+            transition:all 0.5s;
+        }
+        &:hover:before{
+            width:100%;
+        }
+    }
+}

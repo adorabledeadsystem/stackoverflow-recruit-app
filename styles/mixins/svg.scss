@@ -1,0 +1,25 @@
+/* Применяется к обертке, svg читает цвет из currentColor */
+@mixin svg-color($color: currentColor) {
+    path,
+    circle,
+    rect {
+        fill: $color;
+    }
+    
+    path[stroke],
+    circle[stroke] {
+        fill: none;
+        stroke: $color;
+    }
+}
+    
+/* Применяется к обертке, svg скейлится */
+@mixin svg-size($width: 20px, $height: $width) {
+    width: $width;
+    height: $height;
+    
+    & svg {
+        width: 100%;
+        height: 100%;
+    }
+}

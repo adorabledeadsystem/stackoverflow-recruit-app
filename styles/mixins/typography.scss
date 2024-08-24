@@ -1,0 +1,174 @@
+@mixin base-typography() {
+    font-family: IngoStem, sans-serif;
+    font-style: normal;
+    }
+    
+    @mixin typography-enhancer($weight, $style) {
+    @if $weight {
+    font-weight: $weight;
+    }
+    @if $style {
+    font-style: $style;
+    }
+    }
+    
+    @mixin h0($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 64px;
+    line-height: 72px;
+    font-weight: bold;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin h1($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: bold;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin h2($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: bold;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin h3($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin h4($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: bold;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin h5($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin h6($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin h7($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin subtitle1($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin subtitle2($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin subtitle3($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin tabs2($weight: null, $style: null) {
+    @include base-typography;
+    
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin body-xl($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: normal;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin body0($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin body1($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin body1-xs($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: normal;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin body2($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin body3($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin button1($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    @include typography-enhancer($weight, $style);
+    }
+    
+    @mixin button2($weight: null, $style: null) {
+    @include base-typography;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    @include typography-enhancer($weight, $style);
+    }
