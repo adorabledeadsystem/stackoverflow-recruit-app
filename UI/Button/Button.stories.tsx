@@ -12,8 +12,23 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const MainButton: Story = {
+export const DisableButton: Story = {
   args: {
+    variant: "disabled",
+    children: "Button",
+  },
+};
+
+export const PrimaryButton: Story = {
+  args: {
+    variant: "primary",
+    children: "Button",
+  },
+};
+
+export const NotFoundButton: Story = {
+  args: {
+    variant: "notFound",
     children: "Button",
   },
 };

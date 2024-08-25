@@ -12,9 +12,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const MainArrowButton: Story = {
+export const NextArrowButton: Story = {
   args: {
     onClick: () => {},
     type: "next"
+  },
+};
+
+export const PrevArrowButton: Story = {
+  args: {
+    onClick: () => {},
+    type: "prev"
   },
 };
