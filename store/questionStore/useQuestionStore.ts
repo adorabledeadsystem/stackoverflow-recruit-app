@@ -23,7 +23,7 @@ const getInitialSort = () => {
 export const useQuestionStore = create<StoreState>((set) => ({
     query: '',
     sort:  getInitialSort(),
-    hasMore: true,
+    hasMore: false,
     setQuery: (query) => set({ query }),
     setSort: (sort) => {
       set({ sort });

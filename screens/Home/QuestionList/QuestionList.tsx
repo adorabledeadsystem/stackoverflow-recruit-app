@@ -16,11 +16,6 @@ export function QuestionList() {
   const { currentPage, setCurrentPage } = usePaginationStore();
   const { data, isLoading, refetch } = useSearch();
 
-  useEffect(() => {
-    console.log(currentPage)
-    refetch()
-  }, [currentPage])
-
   const handlePaginatePrev = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
@@ -37,7 +32,7 @@ export function QuestionList() {
 
   return (
     <>
-      {data && 
+      {data && hasMore &&
         <div className={styles.paginationArrows}>
           <ArrowButton onClick={handlePaginatePrev} type='prev'/>
           <p className={styles.page}>{currentPage}</p>
@@ -45,7 +40,7 @@ export function QuestionList() {
         </div>
       }
       <div className={styles.questionList}>
-        {data ? data.map((question:any) => (
+        {data && data.length > 0 ? data.map((question:any) => (
             <QuestionItem  
               key={question.question_id}
               id={question.question_id}
@@ -55,15 +50,8 @@ export function QuestionList() {
               answers={question.answer_count}
             />
         ))
-        : <p className={styles.questionListEmpty}>Ошибка - вопросы не найдены</p>
+        : <p className={styles.questionListEmpty}>Вопросы не найдены</p>
         }
-        {/* <QuestionItem  
-          id={232323}
-          title={'Тестовое название'} 
-          author={"Кирилл Езепчук"} 
-          tags={['c++', 'java']}
-          answers={15}
-        /> */}
       </div>
     </>
   )
