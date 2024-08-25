@@ -9,6 +9,7 @@ interface QuestionItemProps {
   tags: string[];
   answers: number;
 }
+
 const QuestionItem: React.FC<QuestionItemProps> = ({ id, title, author, tags, answers }) => {
 
   return (
@@ -20,9 +21,9 @@ const QuestionItem: React.FC<QuestionItemProps> = ({ id, title, author, tags, an
             <p className={styles.author}>Author: <span className={styles.authorName}>{author}</span></p>
             <p className={styles.answers}>Количество ответов: {answers}</p>
             <p className={styles.tags}>Tags: 
-              {tags.map((tag, i) => {
+              {tags.map((tag) => {
                 return(
-                  <span key={i} className={styles.tagName}>{tag}</span>
+                  <span key={tag} className={styles.tagName}>{tag}</span>
                 )
               })}
             </p>

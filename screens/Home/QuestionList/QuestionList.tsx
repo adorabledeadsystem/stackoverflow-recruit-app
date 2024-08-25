@@ -8,7 +8,6 @@ import styles from './QuestionList.module.scss'
 import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
 import { usePaginationStore } from '@/store/paginationStore/usePaginationStore';
 import { useSearch } from '@/services/useSearch';
-import { useEffect } from 'react';
 
 export function QuestionList() {
 
@@ -40,7 +39,7 @@ export function QuestionList() {
         </div>
       }
       <div className={styles.questionList}>
-        {data && data.length > 0 ? data.map((question:any) => (
+        {data && data.length > 0 ? data.map((question:IQuestionItem) => (
             <QuestionItem  
               key={question.question_id}
               id={question.question_id}

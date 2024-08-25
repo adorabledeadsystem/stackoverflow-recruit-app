@@ -27,9 +27,9 @@ const QuestionDetails: React.FC<QuestionDetailsProps> = ({id}) => {
         <h2 className={styles.title}>{question.title}</h2>
         <p className={styles.author}>Author: <span className={styles.authorName}>{question.owner.display_name}</span></p>
         <p className={styles.tags}>Tags: 
-          {question.tags.map((tag:string, i: number) => {
+          {question.tags.map((tag:string) => {
             return(
-              <span key={i} className={styles.tagName}>{tag}</span>
+              <span key={tag} className={styles.tagName}>{tag}</span>
             )
           })}
         </p>
@@ -38,7 +38,7 @@ const QuestionDetails: React.FC<QuestionDetailsProps> = ({id}) => {
       {comments && comments.length > 0 ? (
         <div className={styles.comments}>
           <h3>Comments</h3>
-          {comments.map((comment: any) => (
+          {comments.map((comment: ICommentItem) => (
             <div className={styles.comment} key={comment.comment_id}>
               <div className={styles.commentsTitle}>{comment.owner.display_name}</div>
               <div dangerouslySetInnerHTML={{ __html: comment.body }} />
