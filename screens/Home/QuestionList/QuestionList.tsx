@@ -7,7 +7,7 @@ import Loader from '@/UI/Loader/Loader';
 import ArrowButton from '@/UI/ArrowButton/ArrowButton';
 
 import styles from './QuestionList.module.scss'
-import { IQuestionItem } from '@/types/question';
+import { IQuestionItem } from '@/types/IQuestionItem';
 import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
 import { usePaginationStore } from '@/store/paginationStore/usePaginationStore';
 import { useSearch } from '@/services/useSearch';

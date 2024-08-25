@@ -49,6 +49,7 @@
         .tags {
           @include p3;
           margin-bottom: 12px;
+          @include flex($align: center);
           .tagName{
             background-color: $main-blue;
             margin-left: 10px;
