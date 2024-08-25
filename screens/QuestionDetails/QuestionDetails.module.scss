@@ -50,6 +50,7 @@
     .commentsEmpty{
         @include p1;
         text-align: center;
+        margin-top: 70px;
     }
     @media (max-width: map-get($grid-breakpoints, lg)) {
         width: 90%;

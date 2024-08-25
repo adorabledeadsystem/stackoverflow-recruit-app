@@ -1,10 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 
 import axiosInstance from '@/api/axiosInstance';
+import { IQuestionItem } from '@/types/IQuestionItem';
 
 export async function fetchAllQuestionIds(): Promise<string[]> {
   const response = await axiosInstance.get('/questions');
-  return response.data.items.map((question: { id: string }) => question.id);
+  console.log(response.data.items.map((question: IQuestionItem) => question.question_id.toString()))
+  return response.data.items.map((question: IQuestionItem) => question.question_id.toString());
 }
 
 export const fetchQuestionById = async (id: string) => {

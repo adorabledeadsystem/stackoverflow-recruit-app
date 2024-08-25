@@ -11,12 +11,17 @@ import { IQuestionItem } from '@/types/IQuestionItem';
 import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
 import { usePaginationStore } from '@/store/paginationStore/usePaginationStore';
 import { useSearch } from '@/services/useSearch';
+import { fetchAllQuestionIds } from '@/services/useQuestion';
 
 export function QuestionList() {
 
   const { hasMore } = useQuestionStore();
   const { currentPage, setCurrentPage } = usePaginationStore();
   const { data, isLoading, refetch } = useSearch();
+
+  useEffect(() => {
+    fetchAllQuestionIds();    
+  }, [])
 
   useEffect(() => {
     refetch()
