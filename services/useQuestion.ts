@@ -3,10 +3,18 @@ import { useQuery } from '@tanstack/react-query';
 import axiosInstance from '@/api/axiosInstance';
 import { IQuestionItem } from '@/types/IQuestionItem';
 
-export async function fetchAllQuestionIds(): Promise<string[]> {
-  const response = await axiosInstance.get('/questions');
-  console.log(response.data.items.map((question: IQuestionItem) => question.question_id.toString()))
-  return response.data.items.map((question: IQuestionItem) => question.question_id.toString());
+export async function fetchAllQuestionIds(page: number, pageSize: number) {
+  const response = await axiosInstance.get('/questions',{
+    params: {
+      page: page,
+      pageSize: pageSize,
+    },
+  });
+  console.log(response.data)
+  return {
+    data: response.data.items.map((question: IQuestionItem) => question.question_id.toString()),
+    has_more: response.data.has_more
+  }
 }
 
 export const fetchQuestionById = async (id: string) => {
