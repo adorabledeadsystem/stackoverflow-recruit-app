@@ -3,12 +3,12 @@ import { Metadata } from 'next';
 import QuestionDetails from '@/screens/QuestionDetails/QuestionDetails';
 import { fetchAllQuestionIds, fetchQuestionById } from '@/services/useQuestion';
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ id: string }[]> {
   const ids = await fetchAllQuestionIds(); 
   if(!ids || ids.length === 0){
-    return { id: 'not-found'}
+    return [{ id: 'not-found'}]
   }
-  return ids.map((id: string) => ({ id }));
+  return ids.map((id: string) => ({ id: id }));
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
