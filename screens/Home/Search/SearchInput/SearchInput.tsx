@@ -5,7 +5,7 @@ import search from '@/assets/search.svg'
 import useDebounce from '@/hooks/useDebounce';
 import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
 import Image from 'next/image';
-import { usePaginationStore } from '@/store/paginationStore/paginationStore';
+import { usePaginationStore } from '@/store/paginationStore/usePaginationStore';
 
 export function SearchInput() {
 

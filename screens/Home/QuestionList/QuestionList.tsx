@@ -6,7 +6,7 @@ import ArrowButton from '@/UI/ArrowButton/ArrowButton';
 
 import styles from './QuestionList.module.scss'
 import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
-import { usePaginationStore } from '@/store/paginationStore/paginationStore';
+import { usePaginationStore } from '@/store/paginationStore/usePaginationStore';
 import { useSearch } from '@/services/useSearch';
 import { useEffect } from 'react';
 
@@ -18,19 +18,18 @@ export function QuestionList() {
 
   useEffect(() => {
     console.log(currentPage)
+    refetch()
   }, [currentPage])
 
   const handlePaginatePrev = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
-      refetch()
     }
   };
 
   const handlePaginateNext = () => {
     if (hasMore) {
       setCurrentPage(currentPage + 1);
-      refetch()
     }
   };
   

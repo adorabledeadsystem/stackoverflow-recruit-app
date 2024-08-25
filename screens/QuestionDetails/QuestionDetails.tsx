@@ -19,7 +19,7 @@ const QuestionDetails: React.FC<QuestionDetailsProps> = ({id}) => {
 
   if (isLoading || isLoadingComments) return <Loader />;
 
-  if (!question) return <p>Question not found</p>;
+  if (!question) return <p>Вопрос не найден</p>;
 
   return (
     <div className={styles.questionDetail}>
@@ -37,9 +37,9 @@ const QuestionDetails: React.FC<QuestionDetailsProps> = ({id}) => {
       <div dangerouslySetInnerHTML={{ __html: question.body }} />
       {comments && comments.length > 0 ? (
         <div className={styles.comments}>
-          <h3>Comments:</h3>
+          <h3>Comments</h3>
           {comments.map((comment: any) => (
-            <div key={comment.comment_id}>
+            <div className={styles.comment} key={comment.comment_id}>
               <div className={styles.commentsTitle}>{comment.owner.display_name}</div>
               <div dangerouslySetInnerHTML={{ __html: comment.body }} />
             </div>

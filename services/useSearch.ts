@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import axiosInstance from '@/api/axiosInstance';
 import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
-import { usePaginationStore } from '@/store/paginationStore/paginationStore';
+import { usePaginationStore } from '@/store/paginationStore/usePaginationStore';
 
 const fetchQuestions = async (query: string, sort: string, setHasMore: (hasMore:boolean) => void, currentPage: number) => {
   const params = query.length > 0 ? { intitle: query, sort, page: currentPage, pagesize: 5 } : { order: 'desc', sort: sort, page: currentPage, pagesize: 5 };
