@@ -1,7 +1,12 @@
 import { Metadata } from 'next';
 
 import QuestionDetails from '@/screens/QuestionDetails/QuestionDetails';
-import { fetchQuestionById } from '@/services/useQuestion';
+import { fetchAllQuestionIds, fetchQuestionById } from '@/services/useQuestion';
+
+export async function generateStaticParams() {
+  const ids = await fetchAllQuestionIds(); 
+  return ids.map((id: string) => ({ id }));
+}
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const question = await fetchQuestionById(params.id);
