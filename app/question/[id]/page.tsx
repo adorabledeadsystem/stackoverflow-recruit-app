@@ -5,11 +5,21 @@ import { fetchAllQuestionIds, fetchQuestionById } from '@/services/useQuestion';
 
 export async function generateStaticParams() {
   const ids = await fetchAllQuestionIds(); 
+  if(!ids || ids.length === 0){
+    return { id: 'not-found'}
+  }
   return ids.map((id: string) => ({ id }));
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const question = await fetchQuestionById(params.id);
+
+  if (!question){
+    return {
+      title: 'UnknownQuestion',
+      description: 'UnknownQuestion'
+    }
+  }
 
   return {
     title: question?.title,
