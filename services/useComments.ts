@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 
-import axiosInstance from '../api/axiosInstance';
+import axiosInstance from '@/api/axiosInstance';
 
 export const fetchCommentsByQuestionId = async (id: string) => {
-  const response = await axiosInstance.get(`/questions/${id}/comments`, {
+  const response = await axiosInstance.get(`/questions/${id}/answers`, {
     params: {
-      site: 'stackoverflow',
       order: 'desc',
-      sort: 'creation',
+      sort: 'votes',
+      filter: "!nNPvSNdWme",
     },
   });
   return response.data.items;

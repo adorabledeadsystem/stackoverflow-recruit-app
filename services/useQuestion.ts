@@ -1,11 +1,13 @@
-"use client"
-
 import { useQuery } from '@tanstack/react-query';
 
-import axiosInstance from '../api/axiosInstance';
+import axiosInstance from '@/api/axiosInstance';
 
-const fetchQuestionById = async (id: string) => {
-  const response = await axiosInstance.get(`/questions/${id}`);
+export const fetchQuestionById = async (id: string) => {
+  const response = await axiosInstance.get(`/questions/${id}`, {
+  params: {
+    site: "stackoverflow",
+    filter: "5147LhBYl",
+  }});
   return response.data.items[0];
 };
 

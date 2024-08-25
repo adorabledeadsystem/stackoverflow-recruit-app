@@ -1,5 +1,7 @@
 "use client"
 
+import { usePathname } from 'next/navigation';
+
 import { Logo } from '../Logo/Logo';
 import { Button } from '@/UI/Button/Button';
 
@@ -9,14 +11,17 @@ import { useSearch } from '@/services/useSearch';
 export function Header() {
 
   const { refetch } = useSearch();
+  const pathname = usePathname();
   
   return (
     <>
         <div className={styles.header}>
             <Logo />
-            <div onClick={() => refetch()}>
-              <Button>Обновить вопросы</Button>
-            </div>
+            {pathname === '/' && 
+              <div onClick={() => refetch()}>
+                <Button variant='primary'>Обновить вопросы</Button>
+              </div>
+            }
         </div>   
     </>
   )

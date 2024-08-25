@@ -1,5 +1,11 @@
 @import "@/styles/_sass";
 
+.paginationArrows{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
 .questionList{
     border-radius: 10px;
     width: 70%;
@@ -11,7 +17,7 @@
         justify-content: space-between;
         align-items: center;
         transition: all 0.3s;
-        color: $main-text;
+        color: $main-gray-dark;
         &:hover {
             border-top: 1px solid $main-blue;
             background-color: $main-blue;
@@ -55,6 +61,11 @@
           font-size: 14px;
         }
     }
+}
+.questionListEmpty{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
 }
   
   

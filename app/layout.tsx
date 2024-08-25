@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import '@/styles/normalize.scss'
 import { Header } from "@/components/Header/Header";
 import Providers from "@/lib/query-provider";
 

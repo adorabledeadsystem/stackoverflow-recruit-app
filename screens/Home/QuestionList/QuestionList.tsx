@@ -1,21 +1,52 @@
 "use client"
 
 import QuestionItem from './QuestionItem/QuestionItem'
-import Loader from '@/components/Loader/Loader';
+import Loader from '@/UI/Loader/Loader';
+import ArrowButton from '@/UI/ArrowButton/ArrowButton';
 
 import styles from './QuestionList.module.scss'
+import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
+import { usePaginationStore } from '@/store/paginationStore/paginationStore';
 import { useSearch } from '@/services/useSearch';
+import { useEffect } from 'react';
 
 export function QuestionList() {
 
-  const { data, isLoading } = useSearch();
+  const { hasMore } = useQuestionStore();
+  const { currentPage, setCurrentPage } = usePaginationStore();
+  const { data, isLoading, refetch } = useSearch();
 
+  useEffect(() => {
+    console.log(currentPage)
+  }, [currentPage])
+
+  const handlePaginatePrev = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+      refetch()
+    }
+  };
+
+  const handlePaginateNext = () => {
+    if (hasMore) {
+      setCurrentPage(currentPage + 1);
+      refetch()
+    }
+  };
+  
   if (isLoading) return <Loader />;
 
   return (
     <>
+      {data && 
+        <div className={styles.paginationArrows}>
+          <ArrowButton onClick={handlePaginatePrev} type='prev'/>
+          <p className={styles.page}>{currentPage}</p>
+          <ArrowButton onClick={handlePaginateNext} type='next'/>
+        </div>
+      }
       <div className={styles.questionList}>
-        {data?.map((question:any) => (
+        {data ? data.map((question:any) => (
             <QuestionItem  
               key={question.question_id}
               id={question.question_id}
@@ -24,14 +55,16 @@ export function QuestionList() {
               tags={question.tags}
               answers={question.answer_count}
             />
-        ))}
-        <QuestionItem  
+        ))
+        : <p className={styles.questionListEmpty}>Ошибка - вопросы не найдены</p>
+        }
+        {/* <QuestionItem  
           id={232323}
           title={'Тестовое название'} 
           author={"Кирилл Езепчук"} 
           tags={['c++', 'java']}
           answers={15}
-        />
+        /> */}
       </div>
     </>
   )

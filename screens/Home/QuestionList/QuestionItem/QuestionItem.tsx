@@ -20,9 +20,9 @@ const QuestionItem: React.FC<QuestionItemProps> = ({ id, title, author, tags, an
             <p className={styles.author}>Author: <span className={styles.authorName}>{author}</span></p>
             <p className={styles.answers}>Количество ответов: {answers}</p>
             <p className={styles.tags}>Tags: 
-              {tags.map((tag) => {
+              {tags.map((tag, i) => {
                 return(
-                  <span className={styles.tagName}>{tag}</span>
+                  <span key={i} className={styles.tagName}>{tag}</span>
                 )
               })}
             </p>

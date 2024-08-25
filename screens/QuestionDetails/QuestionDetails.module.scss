@@ -1,0 +1,38 @@
+@import "@/styles/_sass";
+.questionDetail{
+    width: 70%;
+    margin: 0 auto;
+    .questionHeader{
+        text-align: center;
+        .title{
+            border-bottom: 1px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .author{
+            font-size: 16px;
+            margin-bottom: 25px;
+            .authorName{
+                text-decoration: underline;
+            }
+        }
+        .tags {
+            font-size: 14px;
+            margin-bottom: 40px;
+            .tagName{
+              margin-left: 10px;
+              padding: 5px;
+              background-color: $main-blue;
+            }
+        }
+    }
+    .comments{
+        .commentsTitle{
+
+        }
+    }
+    .commentsEmpty{
+        font-size: 18px;
+        text-align: center;
+    }
+}

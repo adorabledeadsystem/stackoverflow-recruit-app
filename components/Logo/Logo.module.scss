@@ -1,5 +1,6 @@
 @import 'styles/sass'; 
 
+
 .logo{
     .logoTitle{
         font-size: 32px;
@@ -8,7 +9,7 @@
         cursor: pointer;
         transition: color .5s linear;
         position:relative;
-        color:#c9c9c9;
+        color: $main-gray-dark;
         &:hover{
             color: white;
             border-radius: 10px;
@@ -17,7 +18,7 @@
         &:before{
             content:"StackOverflowList";
             position:absolute;
-            color: $main-blue;
+            color: $main-blue-dark;
             top:0;
             left:0;
             width:0%;

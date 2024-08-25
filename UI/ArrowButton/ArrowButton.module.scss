@@ -1,0 +1,15 @@
+.arrowButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 100%;
+    cursor: pointer;
+    .prev:before {
+      content: '\2190'; 
+    }
+    .next:after {
+      content: '\2192'; 
+    }
+}
+  

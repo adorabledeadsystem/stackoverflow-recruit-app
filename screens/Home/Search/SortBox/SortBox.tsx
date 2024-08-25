@@ -1,9 +1,9 @@
 import styles from '../Search.module.scss'
-import { useStore } from '@/store/questionStore/useStore';
+import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
 
 export function SortBox() {
 
-  const { sort, setSort } = useStore();
+  const { sort, setSort } = useQuestionStore();
 
   return (
     <>
