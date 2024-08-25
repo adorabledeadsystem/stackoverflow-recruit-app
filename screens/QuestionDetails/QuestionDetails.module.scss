@@ -21,7 +21,7 @@
             }
         }
         .tags {
-            @include flex($wrap: wrap);
+            @include flex($align: center, $wrap: wrap);
             @include p3;
             margin-bottom: 40px;
             gap: 10px;

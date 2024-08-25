@@ -4,7 +4,6 @@ import axiosInstance from '@/api/axiosInstance';
 
 export async function fetchAllQuestionIds(): Promise<string[]> {
   const response = await axiosInstance.get('/questions');
-
   return response.data.items.map((question: { id: string }) => question.id);
 }
 
