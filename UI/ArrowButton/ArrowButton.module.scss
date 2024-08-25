@@ -1,7 +1,7 @@
-@import '@/styles/_sass';
+@import '../../styles/_sass';
 
 .arrowButton{
-  @include flex($justify: center, $align: center);
+  @include flex-centered;
   width: 45px;
   height: 100%;
   cursor: pointer;

@@ -41,7 +41,7 @@ const QuestionDetails: React.FC<QuestionDetailsProps> = ({id}) => {
           <h3>Comments</h3>
           {comments.map((comment: ICommentItem) => (
             <div className={styles.comment} key={comment.comment_id}>
-              <div className={styles.commentsTitle}>{comment.owner.display_name}</div>
+              <div className={styles.commentTitle}>{comment.owner.display_name}</div>
               <div dangerouslySetInnerHTML={{ __html: comment.body }} />
             </div>
           ))}

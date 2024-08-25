@@ -1,7 +1,7 @@
 @import '../../styles/sass';
 
 .loader {
-  @include flex($justify: center, $align: center);
+  @include flex-centered;
   height: 30vh;
 }
 .spinner {
