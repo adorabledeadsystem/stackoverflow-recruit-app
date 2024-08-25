@@ -1,9 +1,7 @@
 @import '@/styles/_sass';
 
 .header{
-    display: flex;  
-    justify-content: space-between;
-    align-items: center;
+    @include flex($justify: space-between, $align: center);
     margin: 30px 100px;
     @media (max-width: map-get($grid-breakpoints, lg))  {
         justify-content: center;

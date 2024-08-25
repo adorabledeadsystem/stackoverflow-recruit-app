@@ -1,48 +1,30 @@
-    
-@mixin h0($weight: null, $style: null) {
-    font-size: 64px;
-    line-height: 72px;
-    font-weight: bold;
-}
-    
-@mixin h1($weight: null, $style: null) {
-    font-size: 48px;
-    line-height: 56px;
-    font-weight: bold;
-}
-    
-@mixin h2($weight: null, $style: null) {
-    font-size: 40px;
-    line-height: 48px;
-    font-weight: bold;
-}
-    
-@mixin h3($weight: null, $style: null) {
+@mixin h1() {
     font-size: 32px;
     line-height: 40px;
     font-weight: bold;
 }
     
-@mixin h4($weight: null, $style: null) {
-    font-size: 28px;
-    line-height: 36px;
-    font-weight: bold;
+@mixin h2() {
+    font-size: 26px;
+    line-height: 26px;
 }
     
-@mixin h5($weight: null, $style: null) {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: bold;
-}
-    
-@mixin h6($weight: null, $style: null) {
+@mixin h3() {
     font-size: 20px;
-    line-height: 24px;
-    font-weight: bold;
+    line-height: 20px;
 }
-    
-@mixin h7($weight: null, $style: null) {
+
+@mixin p1() {
     font-size: 18px;
     line-height: 20px;
-    font-weight: bold;
+}
+
+@mixin p2() {
+    font-size: 16px;
+    line-height: 15px;
+}
+
+@mixin p3() {
+    font-size: 14px;
+    line-height: 10px;
 }

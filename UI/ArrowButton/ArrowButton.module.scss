@@ -1,20 +1,18 @@
 @import '@/styles/_sass';
 
 .arrowButton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 100%;
-    cursor: pointer;
-    .prev:before {
-      content: '\2190'; 
-    }
-    .next:after {
-      content: '\2192'; 
-    }
-    @media (max-width: map-get($grid-breakpoints, lg)) {
-      gap: 15px;
-    }
+  @include flex($justify: center, $align: center);
+  width: 45px;
+  height: 100%;
+  cursor: pointer;
+  .prev:before {
+    content: '\2190'; 
+  }
+  .next:after {
+    content: '\2192'; 
+  }
+  @media (max-width: map-get($grid-breakpoints, lg)) {
+    gap: 15px;
+  }
 }
   

@@ -1,3 +1,4 @@
+@import "./sass";
 * {
 	padding: 0px;
 	margin: 0px;
@@ -87,7 +88,7 @@ legend {
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
 	h3{
-		font-size: 26px;
+		@include h3;
 		margin-bottom: 40px;
 		text-transform: uppercase;
 	}

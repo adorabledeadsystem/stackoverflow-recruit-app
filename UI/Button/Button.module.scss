@@ -2,13 +2,13 @@
 
 .button{
     .buttonText{
+        @include p1;
         cursor: pointer; 
-        font-size: 18px;
         padding: 15px 30px;
         transition: all .2s linear;
     }
     .primary{
-        background-color: #fff;
+        background-color: $white;
         color: $main-gray-dark;
         border: 2px solid $main-blue;
         border-radius: 10px;
@@ -18,7 +18,7 @@
         color: $main-gray-dark;
     }
     .notFound{
-        border-bottom: 2px solid #000;
+        border-bottom: 2px solid $black;
     }
     .notFound:hover{
         border-bottom: 2px solid $main-blue;

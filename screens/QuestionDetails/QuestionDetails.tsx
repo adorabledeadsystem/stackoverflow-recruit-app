@@ -5,6 +5,7 @@ import React from 'react';
 import Loader from '../../UI/Loader/Loader';
 
 import styles from './QuestionDetails.module.scss';
+import { ICommentItem } from '@/types/comment';
 import { useQuestion } from '@/services/useQuestion';
 import { useComments } from '@/services/useComments';
 

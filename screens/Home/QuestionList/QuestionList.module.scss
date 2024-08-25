@@ -1,8 +1,7 @@
 @import "@/styles/_sass";
 
 .paginationArrows{
-  display: flex;
-  justify-content: center;
+  @include flex($justify: center);
   gap: 30px;
   margin-bottom: 20px;
 }
@@ -10,85 +9,77 @@
     border-radius: 10px;
     width: 70%;
     margin: 0 auto;
+    margin-bottom: 30px;
     .questionItem{
-        padding: 20px 40px;
-        border-top: 1px solid #c9c9c9;
-        display: flex; 
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.3s;
-        color: $main-gray-dark;
-        &:hover {
-            border-top: 1px solid $main-blue;
+      @include flex($justify: space-between, $align: center);
+      color: $main-gray-dark;
+      padding: 20px 40px;
+      border-top: 1px solid $main-gray;
+      transition: all 0.3s;
+      &:hover {
+        background-color: $main-blue;
+        border-top: 1px solid $main-blue;
+        padding-left: 60px;
+      }
+      &:last-child{
+        border-bottom: 1px solid $main-gray;
+      }
+      a, a:visited {
+        color: inherit;
+        text-decoration: none;
+      }
+      .question{
+        .title {
+          @include p1;
+          cursor: pointer;
+          color: $black;
+          margin-bottom: 10px;
+        }
+        .author {
+          @include p3;
+          margin-bottom: 15px;
+          .authorName{
+            text-decoration: underline;
+          }
+        }
+        .answers{
+          @include p3;
+          margin-bottom: 35px;
+        }
+        .tags {
+          @include p3;
+          margin-bottom: 12px;
+          .tagName{
             background-color: $main-blue;
-            padding-left: 60px;
-        }
-        &:last-child{
-          border-bottom: 1px solid #c9c9c9;
-        }
-        a, a:visited{
-          color: inherit;
-          text-decoration: none;
-        }
-        .question{
-          .title {
-            font-size: 18px;
-            color: #000;
-            cursor: pointer;
-            margin-bottom: 10px;
-          }
-          .author {
-            font-size: 14px;
-            .authorName{
-              text-decoration: underline;
-            }
-          }
-          .answers{
-            font-size: 14px;
-            margin-bottom: 35px;
-          }
-          .tags {
-            font-size: 14px;
-            margin-bottom: 12px;
-            .tagName{
-              margin-left: 10px;
-              padding: 5px;
-              background-color: $main-blue;
-            }
+            margin-left: 10px;
+            padding: 5px;
           }
         }
-        .comments{
-          font-size: 14px;
-        }
+      }
+      .comments{
+        @include p3;
+      }
     }
     @media (max-width: map-get($grid-breakpoints, lg)) {
       width: 90%;
       padding: 10px;
-  
       .questionItem {
-        flex-direction: column;
-        align-items: flex-start;
+        @include flex($direction: column, $align: flex-start);
         padding: 15px 20px;
-  
         &:hover {
           padding-left: 20px;
         }
-  
         .question {
           .title {
-            font-size: 16px;
+            @include p2;
           }
-  
           .author,
           .answers,
           .tags {
             font-size: 12px;
           }
-  
           .tags {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
+            @include flex($wrap: wrap, $align: center);
             gap: 10px;
           }
         }
@@ -96,9 +87,9 @@
     }
 }
 .questionListEmpty{
+  @include p1;
   text-align: center;
   margin-top: 40px;
-  font-size: 18px;
 }
   
   

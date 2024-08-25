@@ -1,10 +1,13 @@
 "use client"
 
+import { useEffect } from 'react';
+
 import QuestionItem from './QuestionItem/QuestionItem'
 import Loader from '@/UI/Loader/Loader';
 import ArrowButton from '@/UI/ArrowButton/ArrowButton';
 
 import styles from './QuestionList.module.scss'
+import { IQuestionItem } from '@/types/question';
 import { useQuestionStore } from '@/store/questionStore/useQuestionStore';
 import { usePaginationStore } from '@/store/paginationStore/usePaginationStore';
 import { useSearch } from '@/services/useSearch';
@@ -14,6 +17,10 @@ export function QuestionList() {
   const { hasMore } = useQuestionStore();
   const { currentPage, setCurrentPage } = usePaginationStore();
   const { data, isLoading, refetch } = useSearch();
+
+  useEffect(() => {
+    refetch()
+  }, [currentPage])
 
   const handlePaginatePrev = () => {
     if (currentPage !== 1) {

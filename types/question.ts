@@ -1,4 +1,4 @@
-interface IQuestionItem {
+export interface IQuestionItem {
     question_id: number;
     title: string;
     owner: {

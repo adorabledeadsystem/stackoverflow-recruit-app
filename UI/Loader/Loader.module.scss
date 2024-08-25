@@ -1,13 +1,11 @@
 @import '../../styles/sass';
 
 .loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
+  @include flex($justify: center, $align: center);
+  height: 30vh;
 }
 .spinner {
-  border: 8px solid #f3f3f3; 
+  border: 8px solid $main-gray; 
   border-top: 8px solid $main-blue; 
   border-radius: 50%;
   width: 60px; 
