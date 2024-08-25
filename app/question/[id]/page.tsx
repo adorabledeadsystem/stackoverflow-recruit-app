@@ -12,6 +12,14 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+
+  if (params.id === 'not-found') {
+    return {
+      title: 'Page Not Found',
+      description: 'This page does not exist.',
+    };
+  }
+
   const question = await fetchQuestionById(params.id);
 
   if (!question){
@@ -28,6 +36,15 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 export default async function QuestionPage({ params }: { params: { id: string } }) {
+
+  if (params.id === 'not-found') {
+    return (
+      <div>
+        <h1>Page not found</h1>
+      </div>
+    );
+  }
+  
   return (
     <QuestionDetails id={params.id} />
   );
